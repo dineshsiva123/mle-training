@@ -1,0 +1,2715 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20210928103913
+Username: TIGERANALYTICS\dinesh.sivasanka
+RunAs User: TIGERANALYTICS\dinesh.sivasanka
+Configuration Name: 
+Machine: TIGER0164 (Microsoft Windows NT 10.0.19043.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 10680
+PSVersion: 5.1.19041.1237
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.1237
+BuildVersion: 10.0.19041.1237
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is docker_tutorial.txt
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker run -dit debian
+be418c6310760227be71a421195eb966f23b49914fec0219cb6adfa97abff476
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker run -dit debiann
+Unable to find image 'debiann:latest' locally
+docker: Error response from daemon: pull access denied for debiann, repository does not exist or may require 'docker log
+in': denied: requested access to the resource is denied.
+See 'docker run --help'.
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED         STATUS         PORTS     NAMES
+be418c631076   debian    "bash"    2 minutes ago   Up 2 minutes             confident_bose
+00a29ac5d1b5   debian    "bash"    4 minutes ago   Up 4 minutes             cool_wright
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker stop be4
+be4
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker run -dit debian 
+220c472c95443c6b28a127986b6e4aa1240c0199c753f34c18e294a6045abf7f
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED          STATUS          PORTS     NAMES
+220c472c9544   debian    "bash"    13 seconds ago   Up 10 seconds             cranky_cray
+00a29ac5d1b5   debian    "bash"    7 minutes ago    Up 7 minutes              cool_wright
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker stop cool_wright
+cool_wright
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker run -dit debian
+344bb4f2506cf377d9f0931c6c5c6fcacb69cd9878affe9f68c6cc24b1383f4b
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker images
+REPOSITORY   TAG       IMAGE ID       CREATED       SIZE
+debian       latest    a178460bae57   4 hours ago   124MB
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker inspect
+"docker inspect" requires at least 1 argument.
+See 'docker inspect --help'.
+
+Usage:  docker inspect [OPTIONS] NAME|ID [NAME|ID...]
+
+Return low-level information on Docker objects
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED         STATUS         PORTS     NAMES
+344bb4f2506c   debian    "bash"    2 minutes ago   Up 2 minutes             frosty_pare
+220c472c9544   debian    "bash"    5 minutes ago   Up 5 minutes             cranky_cray
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker inspect 344
+[
+    {
+        "Id": "344bb4f2506cf377d9f0931c6c5c6fcacb69cd9878affe9f68c6cc24b1383f4b",
+        "Created": "2021-09-28T05:16:35.1106196Z",
+        "Path": "bash",
+        "Args": [],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 1359,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2021-09-28T05:16:37.3886625Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:a178460bae579ffbbf8805d8ba8e47adbe96f693098c85bf309b79547d076c21",
+        "ResolvConfPath": "/var/lib/docker/containers/344bb4f2506cf377d9f0931c6c5c6fcacb69cd9878affe9f
+68c6cc24b1383f4b/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/344bb4f2506cf377d9f0931c6c5c6fcacb69cd9878affe9f68
+c6cc24b1383f4b/hostname",
+        "HostsPath": "/var/lib/docker/containers/344bb4f2506cf377d9f0931c6c5c6fcacb69cd9878affe9f68c6c
+c24b1383f4b/hosts",
+        "LogPath": "/var/lib/docker/containers/344bb4f2506cf377d9f0931c6c5c6fcacb69cd9878affe9f68c6cc2
+4b1383f4b/344bb4f2506cf377d9f0931c6c5c6fcacb69cd9878affe9f68c6cc24b1383f4b-json.log",
+        "Name": "/frosty_pare",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "default",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "host",
+            "Dns": [],
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "ConsoleSize": [
+                49,
+                120
+            ],
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "KernelMemory": 0,
+            "KernelMemoryTCP": 0,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": false,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/192205a2d4aa2f54fc1d6ced6c8049036e2ba3cf0af33975
+cea20f0f743846f3-init/diff:/var/lib/docker/overlay2/2c56bb2cc053addb856b78b1109afa8eb376d320bfd6f73be0
+8276d89312cf6d/diff",
+                "MergedDir": "/var/lib/docker/overlay2/192205a2d4aa2f54fc1d6ced6c8049036e2ba3cf0af3397
+5cea20f0f743846f3/merged",
+                "UpperDir": "/var/lib/docker/overlay2/192205a2d4aa2f54fc1d6ced6c8049036e2ba3cf0af33975
+cea20f0f743846f3/diff",
+                "WorkDir": "/var/lib/docker/overlay2/192205a2d4aa2f54fc1d6ced6c8049036e2ba3cf0af33975c
+ea20f0f743846f3/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "344bb4f2506c",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": true,
+            "OpenStdin": true,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "bash"
+            ],
+            "Image": "debian",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": {}
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "2c816d6ec44276640eab303a13422a4660e4be24fd1fde7c50eaaa5e10e58866",
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "Ports": {},
+            "SandboxKey": "/var/run/docker/netns/2c816d6ec442",
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "316cd8332bd2dfbed5e79bbe7b363dba50e7af143b735b34efe78dab3f1211b7",
+            "Gateway": "172.17.0.1",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "172.17.0.2",
+            "IPPrefixLen": 16,
+            "IPv6Gateway": "",
+            "MacAddress": "02:42:ac:11:00:02",
+            "Networks": {
+                "bridge": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "NetworkID": "4218aa798eac0895d62c3ec4226f0294d9d80bf027320ae0d67c5efbd87ddf34",
+                    "EndpointID": "316cd8332bd2dfbed5e79bbe7b363dba50e7af143b735b34efe78dab3f1211b7",
+                    "Gateway": "172.17.0.1",
+                    "IPAddress": "172.17.0.2",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "MacAddress": "02:42:ac:11:00:02",
+                    "DriverOpts": null
+                }
+            }
+        }
+    }
+]
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker --help
+
+Usage:  docker [OPTIONS] COMMAND
+
+A self-sufficient runtime for containers
+
+Options:
+      --config string      Location of client config files (default
+                           "C:\\Users\\dinesh.sivasanka\\.docker")
+  -c, --context string     Name of the context to use to connect to the
+                           daemon (overrides DOCKER_HOST env var and
+                           default context set with "docker context use")
+  -D, --debug              Enable debug mode
+  -H, --host list          Daemon socket(s) to connect to
+  -l, --log-level string   Set the logging level
+                           ("debug"|"info"|"warn"|"error"|"fatal")
+                           (default "info")
+      --tls                Use TLS; implied by --tlsverify
+      --tlscacert string   Trust certs signed only by this CA (default
+                           "C:\\Users\\dinesh.sivasanka\\.docker\\ca.pem")
+      --tlscert string     Path to TLS certificate file (default
+                           "C:\\Users\\dinesh.sivasanka\\.docker\\cert.pem")
+      --tlskey string      Path to TLS key file (default
+                           "C:\\Users\\dinesh.sivasanka\\.docker\\key.pem")
+      --tlsverify          Use TLS and verify the remote
+  -v, --version            Print version information and quit
+
+Management Commands:
+  builder     Manage builds
+  buildx*     Build with BuildKit (Docker Inc., v0.6.1-docker)
+  compose*    Docker Compose (Docker Inc., v2.0.0-rc.3)
+  config      Manage Docker configs
+  container   Manage containers
+  context     Manage contexts
+  image       Manage images
+  manifest    Manage Docker image manifests and manifest lists
+  network     Manage networks
+  node        Manage Swarm nodes
+  plugin      Manage plugins
+  scan*       Docker Scan (Docker Inc., v0.8.0)
+  secret      Manage Docker secrets
+  service     Manage services
+  stack       Manage Docker stacks
+  swarm       Manage Swarm
+  system      Manage Docker
+  trust       Manage trust on Docker images
+  volume      Manage volumes
+
+Commands:
+  attach      Attach local standard input, output, and error streams to a running container
+  build       Build an image from a Dockerfile
+  commit      Create a new image from a container's changes
+  cp          Copy files/folders between a container and the local filesystem
+  create      Create a new container
+  diff        Inspect changes to files or directories on a container's filesystem
+  events      Get real time events from the server
+  exec        Run a command in a running container
+  export      Export a container's filesystem as a tar archive
+  history     Show the history of an image
+  images      List images
+  import      Import the contents from a tarball to create a filesystem image
+  info        Display system-wide information
+  inspect     Return low-level information on Docker objects
+  kill        Kill one or more running containers
+  load        Load an image from a tar archive or STDIN
+  login       Log in to a Docker registry
+  logout      Log out from a Docker registry
+  logs        Fetch the logs of a container
+  pause       Pause all processes within one or more containers
+  port        List port mappings or a specific mapping for the container
+  ps          List containers
+  pull        Pull an image or a repository from a registry
+  push        Push an image or a repository to a registry
+  rename      Rename a container
+  restart     Restart one or more containers
+  rm          Remove one or more containers
+  rmi         Remove one or more images
+  run         Run a command in a new container
+  save        Save one or more images to a tar archive (streamed to STDOUT by default)
+  search      Search the Docker Hub for images
+  start       Start one or more stopped containers
+  stats       Display a live stream of container(s) resource usage statistics
+  stop        Stop one or more running containers
+  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+  top         Display the running processes of a container
+  unpause     Unpause all processes within one or more containers
+  update      Update configuration of one or more containers
+  version     Show the Docker version information
+  wait        Block until one or more containers stop, then print their exit codes
+
+Run 'docker COMMAND --help' for more information on a command.
+
+To get more help with docker, check out our guides at https://docs.docker.com/go/guides/
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker image prune --help
+
+Usage:  docker image prune [OPTIONS]
+
+Remove unused images
+
+Options:
+  -a, --all             Remove all unused images, not just dangling ones
+      --filter filter   Provide filter values (e.g. 'until=<timestamp>')
+  -f, --force           Do not prompt for confirmation
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker pull jenkins:latest
+Error response from daemon: manifest for jenkins:latest not found: manifest unknown: manifest unknown
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker pull jenkins/jenkins:lts
+lts: Pulling from jenkins/jenkins
+4c25b3090c26: Pull complete
+750d566fdd60: Pull complete
+2718cc36ca02: Pull complete
+5678b027ee14: Pull complete
+c839cd2df78d: Pull complete
+50861a5addda: Pull complete
+ff2b028e5cf5: Pull complete
+ee710b58f452: Pull complete
+2625c929bb0e: Pull complete
+6a6bf9181c04: Pull complete
+bee5e6792ac4: Pull complete
+6cc5edd2133e: Pull complete
+c07b16426ded: Pull complete
+e9ac42647ae3: Pull complete
+fa925738a490: Pull complete
+4a08c3886279: Pull complete
+2d43fec22b7e: Pull complete
+Digest: sha256:a942c30fc3bcf269a1c32ba27eb4a470148eff9aba086911320031a3c3943e6c
+Status: Downloaded newer image for jenkins/jenkins:lts
+docker.io/jenkins/jenkins:lts
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker pull httpd:2-alpine
+2-alpine: Pulling from library/httpd
+a0d0a0d46f8b: Pull complete
+3152ee199245: Pull complete
+b593f3373482: Pull complete
+007878889a0b: Pull complete
+b82659696d39: Pull complete
+Digest: sha256:5ab66b22a482ae8ddceece0f0228d294fcf53549376d0dd8e9c96b30e0ab8c48
+Status: Downloaded newer image for httpd:2-alpine
+docker.io/library/httpd:2-alpine
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker images
+REPOSITORY        TAG        IMAGE ID       CREATED       SIZE
+debian            latest     a178460bae57   4 hours ago   124MB
+httpd             2-alpine   877451a44b20   6 days ago    54.9MB
+jenkins/jenkins   lts        619aabbe0502   4 weeks ago   441MB
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker system df
+TYPE            TOTAL     ACTIVE    SIZE      RECLAIMABLE
+Images          3         1         619.6MB   495.7MB (80%)
+Containers      4         2         0B        0B
+Local Volumes   0         0         0B        0B
+Build Cache     0         0         0B        0B
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker rmi jenkins/jenkins
+Error: No such image: jenkins/jenkins
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker system df
+TYPE            TOTAL     ACTIVE    SIZE      RECLAIMABLE
+Images          3         1         619.6MB   495.7MB (80%)
+Containers      4         2         0B        0B
+Local Volumes   0         0         0B        0B
+Build Cache     0         0         0B        0B
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker rmi jenkins/jenkins:lts
+Untagged: jenkins/jenkins:lts
+Untagged: jenkins/jenkins@sha256:a942c30fc3bcf269a1c32ba27eb4a470148eff9aba086911320031a3c3943e6c
+Deleted: sha256:619aabbe0502d69b049b7543cda1f374fe381f425d5410680a9003d8620ddd98
+Deleted: sha256:5ad9522c89dd18890e769c8cc9ea897211aa2df5bba093f708bbf65a00163a51
+Deleted: sha256:da7776582a1e12b8b75d4916c85c21ddaefa1b7503d2f39cdf3f13e251028851
+Deleted: sha256:55a9fb8546393ed326496aca5286cf79eb4f552606d5f9c76ba71187736854e5
+Deleted: sha256:bdc388e0560a82be90b2feb2245cb979c08f12c00efeae754a8c0ec63d82e6cf
+Deleted: sha256:bb0110b26f0f5cf131f7a92deb665488fb1962a9ca3965acbbbda6c0b738b92a
+Deleted: sha256:394ee58ccf2fa5708bfd4f4774aada6206eb6895466f86fa393b46f7b3a44cd9
+Deleted: sha256:68713763fa690e1fe74aa52a887f8fd9babccdf218d3520975e141b5a2b9b3e0
+Deleted: sha256:6b9459ed3369dc2205da1487033fd5548b048e168c4b700da77982f2f1a2c69a
+Deleted: sha256:6fa45bfd1ab9089537001fc5809aa9e8dc3b2bd49b2805dd66aecb4aa8593274
+Deleted: sha256:78b9ff9dfdab0addd3535504a933bc36c97b552bfb3aeb17e0654251ee988427
+Deleted: sha256:3efa8104a3ec96b9ea10aaa39bbddf30f3abc8ee5a23095d60ae2e3224633dcc
+Deleted: sha256:e8edcf0252603b3d0ec345757de20de670510398f9361ff38a82dd5cb210a1a9
+Deleted: sha256:159440e17ffa3a2a5d49203ee6f196033ca2bfcd2c88f5351a3d05d467a39124
+Deleted: sha256:856768534439b02399e888a29bd95e431d891175f4001873a1db34a690f63383
+Deleted: sha256:4b60eeee7be1add63308203fbc26ccf27d711cb94e2dadcdd7c799793f478722
+Deleted: sha256:aa8e217907805131972007c0598d2434f73ec12d51e83d69f2bb822288fc3af1
+Deleted: sha256:a881cfa23a7842d844818a1cb4d8460a7396b94fdc0bc4091f8d79b8f4f81c3e
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker images
+REPOSITORY   TAG        IMAGE ID       CREATED       SIZE
+debian       latest     a178460bae57   4 hours ago   124MB
+httpd        2-alpine   877451a44b20   6 days ago    54.9MB
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker rmi httpd:2-alpine
+Untagged: httpd:2-alpine
+Untagged: httpd@sha256:5ab66b22a482ae8ddceece0f0228d294fcf53549376d0dd8e9c96b30e0ab8c48
+Deleted: sha256:877451a44b20c515d8cc35343164c2be60e8d29d8fe729411eb63b0bf5ac0a15
+Deleted: sha256:408baf4b3b9e2250e73f5f27859ab96e0cac026b5c3a8563a04d9bc38b559323
+Deleted: sha256:24a62fffcf1034b41c246a0acff4db3f600a9bdb15d9e4028109c4b34c19b4e8
+Deleted: sha256:75aea8f4bb5f69d4a21089a288afe1f07571ee995be73c22ef1b0a57862659a0
+Deleted: sha256:fd08fb8f82d8c5d11b1b817b9d15018c326603601fb05451802c08088f612df8
+Deleted: sha256:e2eb06d8af8218cfec8210147357a68b7e13f7c485b991c288c2d01dc228bb68
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker images
+REPOSITORY   TAG       IMAGE ID       CREATED       SIZE
+debian       latest    a178460bae57   4 hours ago   124MB
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker run -dit redis
+Unable to find image 'redis:latest' locally
+latest: Pulling from library/redis
+a330b6cecb98: Pull complete
+14bfbab96d75: Pull complete
+8b3e2d14a955: Pull complete
+5da5e1b21a2f: Pull complete
+6af3a5ca4596: Pull complete
+4f9efe5b47a5: Pull complete
+Digest: sha256:e595e79c05c7690f50ef0136acc9d932d65d8b2ce7915d26a68ca3fb41a7db61
+Status: Downloaded newer image for redis:latest
+c15f62171e37a44dccdc3d4888ddb75c03468022e100df81362bb84afbca71d8
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS      NAMES
+c15f62171e37   redis     "docker-entrypoint.s…"   12 seconds ago   Up 6 seconds    6379/tcp   dazzling
+_satoshi
+344bb4f2506c   debian    "bash"                   23 minutes ago   Up 23 minutes              frosty_p
+are
+220c472c9544   debian    "bash"                   25 minutes ago   Up 25 minutes              cranky_c
+ray
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker run -dit --name dinesh redis
+e2488c5a21d69efc35603a6260c65c22520bb4125d2d164d84940e97b6a7da76
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED              STATUS              PORTS
+NAMES
+e2488c5a21d6   redis     "docker-entrypoint.s…"   9 seconds ago        Up 5 seconds        6379/tcp
+dinesh
+c15f62171e37   redis     "docker-entrypoint.s…"   About a minute ago   Up About a minute   6379/tcp
+dazzling_satoshi
+344bb4f2506c   debian    "bash"                   24 minutes ago       Up 24 minutes
+frosty_pare
+220c472c9544   debian    "bash"                   26 minutes ago       Up 26 minutes
+cranky_cray
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker stop dinesh
+dinesh
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED              STATUS              PORTS
+NAMES
+c15f62171e37   redis     "docker-entrypoint.s…"   About a minute ago   Up About a minute   6379/tcp
+dazzling_satoshi
+344bb4f2506c   debian    "bash"                   24 minutes ago       Up 24 minutes
+frosty_pare
+220c472c9544   debian    "bash"                   27 minutes ago       Up 27 minutes
+cranky_cray
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker run --rm hello-world
+Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
+2db29710123e: Pull complete
+Digest: sha256:393b81f0ea5a98a7335d7ad44be96fe76ca8eb2eaa76950eb8c989ebf2b78ec0
+Status: Downloaded newer image for hello-world:latest
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker ps -a
+CONTAINER ID   IMAGE     COMMAND                  CREATED              STATUS                        P
+ORTS      NAMES
+e2488c5a21d6   redis     "docker-entrypoint.s…"   About a minute ago   Exited (0) 54 seconds ago
+          dinesh
+c15f62171e37   redis     "docker-entrypoint.s…"   2 minutes ago        Up 2 minutes                  6
+379/tcp   dazzling_satoshi
+344bb4f2506c   debian    "bash"                   25 minutes ago       Up 25 minutes
+          frosty_pare
+220c472c9544   debian    "bash"                   27 minutes ago       Up 27 minutes
+          cranky_cray
+be418c631076   debian    "bash"                   32 minutes ago       Exited (137) 28 minutes ago
+          confident_bose
+00a29ac5d1b5   debian    "bash"                   34 minutes ago       Exited (137) 26 minutes ago
+          cool_wright
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker run hello-world
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker ps -a
+CONTAINER ID   IMAGE         COMMAND                  CREATED              STATUS
+     PORTS      NAMES
+029c8adfce2c   hello-world   "/hello"                 10 seconds ago       Exited (0) 6 seconds ago
+                unruffled_roentgen
+e2488c5a21d6   redis         "docker-entrypoint.s…"   About a minute ago   Exited (0) About a minute a
+go              dinesh
+c15f62171e37   redis         "docker-entrypoint.s…"   2 minutes ago        Up 2 minutes
+     6379/tcp   dazzling_satoshi
+344bb4f2506c   debian        "bash"                   25 minutes ago       Up 25 minutes
+                frosty_pare
+220c472c9544   debian        "bash"                   28 minutes ago       Up 28 minutes
+                cranky_cray
+be418c631076   debian        "bash"                   33 minutes ago       Exited (137) 29 minutes ago
+                confident_bose
+00a29ac5d1b5   debian        "bash"                   35 minutes ago       Exited (137) 26 minutes ago
+                cool_wright
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker logs CONTAINER_NAME
+Error: No such container: CONTAINER_NAME
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker logs dazzling_satoshi
+1:C 28 Sep 2021 05:39:47.228 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 28 Sep 2021 05:39:47.228 # Redis version=6.2.5, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 28 Sep 2021 05:39:47.228 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+1:M 28 Sep 2021 05:39:47.230 * monotonic clock: POSIX clock_gettime
+                _._
+           _.-``__ ''-._
+      _.-``    `.  `_.  ''-._           Redis 6.2.5 (00000000/0) 64 bit
+  .-`` .-```.  ```\/    _.,_ ''-._
+ (    '      ,       .-`  | `,    )     Running in standalone mode
+ |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
+ |    `-._   `._    /     _.-'    |     PID: 1
+  `-._    `-._  `-./  _.-'    _.-'
+ |`-._`-._    `-.__.-'    _.-'_.-'|
+ |    `-._`-._        _.-'_.-'    |           https://redis.io
+  `-._    `-._`-.__.-'_.-'    _.-'
+ |`-._`-._    `-.__.-'    _.-'_.-'|
+ |    `-._`-._        _.-'_.-'    |
+  `-._    `-._`-.__.-'_.-'    _.-'
+      `-._    `-.__.-'    _.-'
+          `-._        _.-'
+              `-.__.-'
+
+1:M 28 Sep 2021 05:39:47.230 # Server initialized
+1:M 28 Sep 2021 05:39:47.230 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /e
+tc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1:M 28 Sep 2021 05:39:47.231 * Ready to accept connections
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker run --name test_container_dinesh -d hello-world
+a71afef24fa4b6abcf2fe338add0b16e78da7de121d46c57030d95ca2b38f7c5
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS      NAMES
+c15f62171e37   redis     "docker-entrypoint.s…"   5 minutes ago    Up 5 minutes    6379/tcp   dazzling_satoshi
+344bb4f2506c   debian    "bash"                   28 minutes ago   Up 28 minutes              frosty_pare
+220c472c9544   debian    "bash"                   31 minutes ago   Up 31 minutes              cranky_cray
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker ps -a
+CONTAINER ID   IMAGE         COMMAND                  CREATED              STATUS                          PORTS      NAMES
+a71afef24fa4   hello-world   "/hello"                 About a minute ago   Exited (0) About a minute ago              test_container_dinesh
+029c8adfce2c   hello-world   "/hello"                 3 minutes ago        Exited (0) 3 minutes ago                   unruffled_roentgen
+e2488c5a21d6   redis         "docker-entrypoint.s…"   5 minutes ago        Exited (0) 5 minutes ago                   dinesh
+c15f62171e37   redis         "docker-entrypoint.s…"   6 minutes ago        Up 6 minutes                    6379/tcp   dazzling_satoshi
+344bb4f2506c   debian        "bash"                   29 minutes ago       Up 29 minutes                              frosty_pare
+220c472c9544   debian        "bash"                   31 minutes ago       Up 31 minutes                              cranky_cray
+be418c631076   debian        "bash"                   36 minutes ago       Exited (137) 32 minutes ago                confident_bose
+00a29ac5d1b5   debian        "bash"                   38 minutes ago       Exited (137) 30 minutes ago                cool_wright
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker logs test_container_dinesh
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker logs -t test_container_dinesh
+2021-09-28T05:44:52.286329700Z
+2021-09-28T05:44:52.286367900Z Hello from Docker!
+2021-09-28T05:44:52.286373800Z This message shows that your installation appears to be working correctly.
+2021-09-28T05:44:52.286376900Z
+2021-09-28T05:44:52.286379600Z To generate this message, Docker took the following steps:
+2021-09-28T05:44:52.286382300Z  1. The Docker client contacted the Docker daemon.
+2021-09-28T05:44:52.286385000Z  2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+2021-09-28T05:44:52.286387900Z     (amd64)
+2021-09-28T05:44:52.286390500Z  3. The Docker daemon created a new container from that image which runs the
+2021-09-28T05:44:52.286393200Z     executable that produces the output you are currently reading.
+2021-09-28T05:44:52.286395800Z  4. The Docker daemon streamed that output to the Docker client, which sent it
+2021-09-28T05:44:52.286398400Z     to your terminal.
+2021-09-28T05:44:52.286401000Z
+2021-09-28T05:44:52.286403600Z To try something more ambitious, you can run an Ubuntu container with:
+2021-09-28T05:44:52.286406200Z  $ docker run -it ubuntu bash
+2021-09-28T05:44:52.286408700Z
+2021-09-28T05:44:52.286411200Z Share images, automate workflows, and more with a free Docker ID:
+2021-09-28T05:44:52.286413800Z  https://hub.docker.com/
+2021-09-28T05:44:52.286416400Z
+2021-09-28T05:44:52.286418900Z For more examples and ideas, visit:
+2021-09-28T05:44:52.286421900Z  https://docs.docker.com/get-started/
+2021-09-28T05:44:52.286424500Z
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker run --name apache_welcome_dinesh -d -p 9900:80 httpd:latest
+Unable to find image 'httpd:latest' locally
+latest: Pulling from library/httpd
+a330b6cecb98: Already exists
+14e3dd65f04d: Pull complete
+fe59ad2e7efe: Pull complete
+68eb42ff9345: Pull complete
+9d5052bb82be: Pull complete
+Digest: sha256:d763d8ea8670ad719a535ed39f64af23820d6c3ccaff65cb5f9a1879e511d73a
+Status: Downloaded newer image for httpd:latest
+8e9e9bfb0095a5c5577b7386e88fef8d11454456bf79fdd9fdbf279314073d5e
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker ps
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS                                   NAMES
+8e9e9bfb0095   httpd:latest   "httpd-foreground"       10 seconds ago   Up 5 seconds    0.0.0.0:9900->80/tcp, :::9900->80/tcp   apache_welcome_dinesh
+c15f62171e37   redis          "docker-entrypoint.s…"   8 minutes ago    Up 8 minutes    6379/tcp                                dazzling_satoshi
+344bb4f2506c   debian         "bash"                   31 minutes ago   Up 31 minutes                                           frosty_pare
+220c472c9544   debian         "bash"                   34 minutes ago   Up 34 minutes                                           cranky_cray
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> curl http://localhost:9900
+
+
+StatusCode        : 200
+StatusDescription : OK
+Content           : <html><body><h1>It works!</h1></body></html>
+
+RawContent        : HTTP/1.1 200 OK
+                    Keep-Alive: timeout=5, max=100
+                    Connection: Keep-Alive
+                    Accept-Ranges: bytes
+                    Content-Length: 45
+                    Content-Type: text/html
+                    Date: Tue, 28 Sep 2021 05:48:27 GMT
+                    ETag: "2d-432a5e4a73a80...
+Forms             : {}
+Headers           : {[Keep-Alive, timeout=5, max=100], [Connection, Keep-Alive], [Accept-Ranges, bytes], [Content-Length, 45]...}
+Images            : {}
+InputFields       : {}
+Links             : {}
+ParsedHtml        : mshtml.HTMLDocumentClass
+RawContentLength  : 45
+
+
+
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker run -it --name enter_redis_dinesh redis /bin/bash
+root@2b57682b7c9b:/data# bash --version
+GNU bash, version 5.0.3(1)-release (x86_64-pc-linux-gnu)
+Copyright (C) 2019 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+
+This is free software; you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+root@2b57682b7c9b:/data# exit
+exit
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker ps -a
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS                        PORTS                                   NAMES
+2b57682b7c9b   redis          "docker-entrypoint.s…"   33 seconds ago   Exited (0) 7 seconds ago                                              enter_redis_dinesh
+8e9e9bfb0095   httpd:latest   "httpd-foreground"       2 minutes ago    Up 2 minutes                  0.0.0.0:9900->80/tcp, :::9900->80/tcp   apache_welcome_dinesh
+a71afef24fa4   hello-world    "/hello"                 5 minutes ago    Exited (0) 5 minutes ago                                              test_container_dinesh
+029c8adfce2c   hello-world    "/hello"                 8 minutes ago    Exited (0) 8 minutes ago                                              unruffled_roentgen
+e2488c5a21d6   redis          "docker-entrypoint.s…"   10 minutes ago   Exited (0) 9 minutes ago                                              dinesh
+c15f62171e37   redis          "docker-entrypoint.s…"   11 minutes ago   Up 10 minutes                 6379/tcp                                dazzling_satoshi
+344bb4f2506c   debian         "bash"                   34 minutes ago   Up 34 minutes                                                         frosty_pare
+220c472c9544   debian         "bash"                   36 minutes ago   Up 36 minutes                                                         cranky_cray
+be418c631076   debian         "bash"                   41 minutes ago   Exited (137) 37 minutes ago                                           confident_bose
+00a29ac5d1b5   debian         "bash"                   43 minutes ago   Exited (137) 35 minutes ago                                           cool_wright
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker run -dit --name exec_command_redis_dinesh redis
+d5b709c7cb0c3d396d785398c30b5c86f4081207d2ee8ad47c43e619ac2d8a41
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker ps
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS                                   NAMES
+d5b709c7cb0c   redis          "docker-entrypoint.s…"   12 seconds ago   Up 8 seconds    6379/tcp                                exec_command_redis_dinesh
+8e9e9bfb0095   httpd:latest   "httpd-foreground"       3 minutes ago    Up 3 minutes    0.0.0.0:9900->80/tcp, :::9900->80/tcp   apache_welcome_dinesh
+c15f62171e37   redis          "docker-entrypoint.s…"   11 minutes ago   Up 11 minutes   6379/tcp                                dazzling_satoshi
+344bb4f2506c   debian         "bash"                   34 minutes ago   Up 34 minutes                                           frosty_pare
+220c472c9544   debian         "bash"                   37 minutes ago   Up 37 minutes                                           cranky_cray
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker exec -it exec_command_redis_dinesh /bin/bash
+root@d5b709c7cb0c:/data# exit
+exit
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> docker ps
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS                                   NAMES
+d5b709c7cb0c   redis          "docker-entrypoint.s…"   41 seconds ago   Up 38 seconds   6379/tcp                                exec_command_redis_dinesh
+8e9e9bfb0095   httpd:latest   "httpd-foreground"       3 minutes ago    Up 3 minutes    0.0.0.0:9900->80/tcp, :::9900->80/tcp   apache_welcome_dinesh
+c15f62171e37   redis          "docker-entrypoint.s…"   12 minutes ago   Up 12 minutes   6379/tcp                                dazzling_satoshi
+344bb4f2506c   debian         "bash"                   35 minutes ago   Up 35 minutes                                           frosty_pare
+220c472c9544   debian         "bash"                   37 minutes ago   Up 37 minutes                                           cranky_cray
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> mkdir tempbuild
+
+
+    Directory: C:\Users\dinesh.sivasanka\Desktop\tmlep
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        28-09-2021     11:25                tempbuild
+
+
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep> cd tempbuild
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep\tempbuild> nano Dockerfile
+nano : The term 'nano' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ nano Dockerfile
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (nano:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+nano : The term 'nano' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify
+that the path is correct and try again.
+At line:1 char:1
++ nano Dockerfile
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (nano:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep\tempbuild> FROM debian:stable
+At line:1 char:1
++ FROM debian:stable
++ ~~~~
+The 'from' keyword is not supported in this version of the language.
+At line:1 char:1
++ FROM debian:stable
++ ~~~~
+The 'from' keyword is not supported in this version of the language.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : ReservedKeywordNotAllowed
+
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep\tempbuild> LABEL maintainer="ENTER_YOUR_NAME_HERE"
+Access Denied as you do not have sufficient privileges or
+the disk may be locked by another process.
+You have to invoke this utility running in elevated mode
+and make sure the disk is unlocked.
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep\tempbuild> RUN apt update && apt install -y nano && apt clean
+At line:1 char:16
++ RUN apt update && apt install -y nano && apt clean
++                ~~
+The token '&&' is not a valid statement separator in this version.
+
+At line:1 char:39
++ RUN apt update && apt install -y nano && apt clean
++                                       ~~
+The token '&&' is not a valid statement separator in this version.
+At line:1 char:16
++ RUN apt update && apt install -y nano && apt clean
++                ~~
+The token '&&' is not a valid statement separator in this version.
+
+At line:1 char:39
++ RUN apt update && apt install -y nano && apt clean
++                                       ~~
+The token '&&' is not a valid statement separator in this version.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : InvalidEndOfLine
+
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep\tempbuild> wsl nano Dockerfile
+
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep\tempbuild> docker build -t dinesh/nanotest:latest .
+[+] Building 48.8s (6/6) FINISHED
+ => [internal] load build definition from Dockerfile                                                                                                                        1.7s
+ => => transferring dockerfile: 153B                                                                                                                                        0.0s
+ => [internal] load .dockerignore                                                                                                                                           2.0s
+ => => transferring context: 2B                                                                                                                                             0.0s
+ => [internal] load metadata for docker.io/library/debian:stable                                                                                                            5.3s
+ => [1/2] FROM docker.io/library/debian:stable@sha256:4727a5aa4d30b8037de7191febd351305f4f24c97e8196e2400be6fbae896729                                                     16.2s
+ => => resolve docker.io/library/debian:stable@sha256:4727a5aa4d30b8037de7191febd351305f4f24c97e8196e2400be6fbae896729                                                      0.4s
+ => => sha256:4727a5aa4d30b8037de7191febd351305f4f24c97e8196e2400be6fbae896729 1.85kB / 1.85kB                                                                              0.0s
+ => => sha256:091d2ab48e67c85d3dfa5462d6c68ce84348a88f448f22094b83e043f28c3060 529B / 529B                                                                                  0.0s
+ => => sha256:989a85944f1b66e216b2b1f67dd94f6683c654e0eb18242500099c96b398782c 1.46kB / 1.46kB                                                                              0.0s
+ => => sha256:37129e212f741f9500b01b63da85f25e1c35df814e9e2dfb70b0892e66dad19f 54.93MB / 54.93MB                                                                            8.8s
+ => => extracting sha256:37129e212f741f9500b01b63da85f25e1c35df814e9e2dfb70b0892e66dad19f                                                                                   5.3s
+ => [2/2] RUN apt update && apt install -y nano && apt clean                                                                                                               22.9s
+ => exporting to image                                                                                                                                                      1.2s
+ => => exporting layers                                                                                                                                                     1.1s
+ => => writing image sha256:91e69a454119e8e1fe32c32fdcb0a6c7375d365fab7241064c2d55c5e8b1f057                                                                                0.1s
+ => => naming to docker.io/dinesh/nanotest:latest                                                                                                                           0.1s
+
+Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep\tempbuild> docker build -t dineshdocker987/nanotest:latest .
+[+] Building 3.4s (6/6) FINISHED
+ => [internal] load build definition from Dockerfile                                                                                                                        1.0s
+ => => transferring dockerfile: 31B                                                                                                                                         0.0s
+ => [internal] load .dockerignore                                                                                                                                           1.2s
+ => => transferring context: 2B                                                                                                                                             0.0s
+ => [internal] load metadata for docker.io/library/debian:stable                                                                                                            1.5s
+ => [1/2] FROM docker.io/library/debian:stable@sha256:4727a5aa4d30b8037de7191febd351305f4f24c97e8196e2400be6fbae896729                                                      0.0s
+ => CACHED [2/2] RUN apt update && apt install -y nano && apt clean                                                                                                         0.0s
+ => exporting to image                                                                                                                                                      0.2s
+ => => exporting layers                                                                                                                                                     0.0s
+ => => writing image sha256:91e69a454119e8e1fe32c32fdcb0a6c7375d365fab7241064c2d55c5e8b1f057                                                                                0.1s
+ => => naming to docker.io/dineshdocker987/nanotest:latest                                                                                                                  0.1s
+
+Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep\tempbuild> docker images
+REPOSITORY                 TAG       IMAGE ID       CREATED          SIZE
+dinesh/nanotest            latest    91e69a454119   29 seconds ago   145MB
+dineshdocker987/nanotest   latest    91e69a454119   29 seconds ago   145MB
+debian                     latest    a178460bae57   5 hours ago      124MB
+hello-world                latest    feb5d9fea6a5   4 days ago       13.3kB
+httpd                      latest    5ebe6e00baf9   6 days ago       138MB
+redis                      latest    02c7f2054405   3 weeks ago      105MB
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep\tempbuild> docker run --name nanotest -it dineshdocker987/nanotest
+root@04104a1cd43e:/# which nano
+/bin/nano
+root@04104a1cd43e:/# exit
+exit
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep\tempbuild> docker login
+Login with your Docker ID to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com to create one.
+Username: dineshdocker987
+Password:
+Login Succeeded
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep\tempbuild> docker push YOUR_DOCKER_ID/nanotest:latest
+invalid reference format: repository name must be lowercase
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep\tempbuild> docker push dineshdocker987/nanotest:latest
+The push refers to repository [docker.io/dineshdocker987/nanotest]
+068ad4b82bf7: Pushed
+040ca038bd06: Mounted from library/debian
+latest: digest: sha256:c39ca2d48e6d1c4ce5b989a8e242c811ec29c8e1391b50f7eaaffdeb4824d2c9 size: 741
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep\tempbuild> docker volume create localvolume
+localvolume
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep\tempbuild> docker volume inspect localvolume
+[
+    {
+        "CreatedAt": "2021-09-28T06:13:16Z",
+        "Driver": "local",
+        "Labels": {},
+        "Mountpoint": "/var/lib/docker/volumes/localvolume/_data",
+        "Name": "localvolume",
+        "Options": {},
+        "Scope": "local"
+    }
+]
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep\tempbuild> echo "This file exists" > /var/lib/docker/volumes/localvolume/_data/file.txt
+out-file : Could not find a part of the path 'C:\var\lib\docker\volumes\localvolume\_data\file.txt'.
+At line:1 char:1
++ echo "This file exists" > /var/lib/docker/volumes/localvolume/_data/f ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OpenError: (:) [Out-File], DirectoryNotFoundException
+    + FullyQualifiedErrorId : FileOpenFailure,Microsoft.PowerShell.Commands.OutFileCommand
+out-file : Could not find a part of the path 'C:\var\lib\docker\volumes\localvolume\_data\file.txt'.
+At line:1 char:1
++ echo "This file exists" > /var/lib/docker/volumes/localvolume/_data/f ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OpenError: (:) [Out-File], DirectoryNotFoundException
+    + FullyQualifiedErrorId : FileOpenFailure,Microsoft.PowerShell.Commands.OutFileCommand
+
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep\tempbuild> echo "This file exists" > var/lib/docker/volumes/localvolume/_data/file.txt
+out-file : Could not find a part of the path 
+'C:\Users\dinesh.sivasanka\Desktop\tmlep\tempbuild\var\lib\docker\volumes\localvolume\_data\file.txt'.
+At line:1 char:1
++ echo "This file exists" > var/lib/docker/volumes/localvolume/_data/fi ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OpenError: (:) [Out-File], DirectoryNotFoundException
+    + FullyQualifiedErrorId : FileOpenFailure,Microsoft.PowerShell.Commands.OutFileCommand
+out-file : Could not find a part of the path 'C:\Users\dinesh.sivasanka\Desktop\tmlep\tempbuild\var\lib\docker\volumes\localvolume\_data\file.txt'.
+At line:1 char:1
++ echo "This file exists" > var/lib/docker/volumes/localvolume/_data/fi ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OpenError: (:) [Out-File], DirectoryNotFoundException
+    + FullyQualifiedErrorId : FileOpenFailure,Microsoft.PowerShell.Commands.OutFileCommand
+
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep\tempbuild> docker volume inspect localvolume
+[
+    {
+        "CreatedAt": "2021-09-28T06:13:16Z",
+        "Driver": "local",
+        "Labels": {},
+        "Mountpoint": "/var/lib/docker/volumes/localvolume/_data",
+        "Name": "localvolume",
+        "Options": {},
+        "Scope": "local"
+    }
+]
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep\tempbuild> docker run -d --name mountvolumedinesh --mount src=localvolume,dst=/data httpd
+bf9db15066b1f1a17c812abfac94210278ec0b086595133af1855bc1a85838a5
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep\tempbuild> docker exec -it mountvolumedinesh /bin/bash
+root@bf9db15066b1:/usr/local/apache2# df -h
+Filesystem      Size  Used Avail Use% Mounted on
+overlay         251G  1.3G  237G   1% /
+tmpfs            64M     0   64M   0% /dev
+tmpfs           6.2G     0  6.2G   0% /sys/fs/cgroup
+shm              64M     0   64M   0% /dev/shm
+/dev/sdc        251G  1.3G  237G   1% /data
+tmpfs           6.2G     0  6.2G   0% /proc/acpi
+tmpfs           6.2G     0  6.2G   0% /sys/firmware
+root@bf9db15066b1:/usr/local/apache2# cat data
+cat: data: No such file or directory
+root@bf9db15066b1:/usr/local/apache2# cat /data
+cat: /data: Is a directory
+root@bf9db15066b1:/usr/local/apache2# cat /data/file.txt
+cat: /data/file.txt: No such file or directory
+root@bf9db15066b1:/usr/local/apache2# echo "Created from inside the container" > /data/from-container.txt
+root@bf9db15066b1:/usr/local/apache2# cat /data/from-container.txt
+Created from inside the container
+root@bf9db15066b1:/usr/local/apache2# exit
+exit
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep\tempbuild> cat /var/lib/docker/volumes/localvolume/_data/from-container.txt
+cat : Cannot find path 'C:\var\lib\docker\volumes\localvolume\_data\from-container.txt' because it does not exist.
+At line:1 char:1
++ cat /var/lib/docker/volumes/localvolume/_data/from-container.txt
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\var\lib\dock...m-container.txt:String) [Get-Content], 
+ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetContentCommand
+cat : Cannot find path 'C:\var\lib\docker\volumes\localvolume\_data\from-container.txt' because it does not exist.
+At line:1 char:1
++ cat /var/lib/docker/volumes/localvolume/_data/from-container.txt
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\var\lib\dock...m-container.txt:String) [Get-Content], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetContentCommand
+
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep\tempbuild> docker run -d --name tempvolumedinesh --mount type=tmpfs,dst=/tempdata httpd
+081f5b035f59fb61f7f3555ddfe64729397216f6a66434f11138dbd87f262b1b
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep\tempbuild> docker inspect tempvolumedinesh | grep Mounts -A 10
+grep : The term 'grep' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:35
++ docker inspect tempvolumedinesh | grep Mounts -A 10
++                                   ~~~~
+    + CategoryInfo          : ObjectNotFound: (grep:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+grep : The term 'grep' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify
+that the path is correct and try again.
+At line:1 char:35
++ docker inspect tempvolumedinesh | grep Mounts -A 10
++                                   ~~~~
+    + CategoryInfo          : ObjectNotFound: (grep:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep\tempbuild> docker inspect tempvolumedinesh | Select-String Mounts -A 10
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: ([:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: ([:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (    {:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (    {:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (        "Id": "...8dbd87f262b1b",:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (        "Id": "...8dbd87f262b1b",:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (        "Create...0:32.1844927Z",:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (        "Create...0:32.1844927Z",:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (        "Path": "httpd-foreground",:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (        "Path": "httpd-foreground",:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (        "Args": [],:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (        "Args": [],:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (        "State": {:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (        "State": {:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "Status": "running",:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "Status": "running",:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "Running": true,:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "Running": true,:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "Paused": false,:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "Paused": false,:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "Restarting": false,:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "Restarting": false,:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "OOMKilled": false,:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "OOMKilled": false,:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "Dead": false,:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "Dead": false,:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "Pid": 3320,:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "Pid": 3320,:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "ExitCode": 0,:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "ExitCode": 0,:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "Error": "",:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "Error": "",:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "St...0:34.8410964Z",:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "St...0:34.8410964Z",:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "Fi...1-01T00:00:00Z":PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "Fi...1-01T00:00:00Z":PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (        },:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (        },:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (        "Image"...154fa5393631a",:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (        "Image"...154fa5393631a",:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (        "Resolv...b/resolv.conf",:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (        "Resolv...b/resolv.conf",:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (        "Hostna...2b1b/hostname",:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (        "Hostna...2b1b/hostname",:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (        "HostsP...f262b1b/hosts",:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (        "HostsP...f262b1b/hosts",:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (        "LogPat...2b1b-json.log",:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (        "LogPat...2b1b-json.log",:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (        "Name": "/tempvolumedinesh",:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (        "Name": "/tempvolumedinesh",:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (        "RestartCount": 0,:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (        "RestartCount": 0,:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (        "Driver": "overlay2",:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (        "Driver": "overlay2",:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (        "Platform": "linux",:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (        "Platform": "linux",:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (        "MountLabel": "",:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (        "MountLabel": "",:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (        "ProcessLabel": "",:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (        "ProcessLabel": "",:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (        "AppArmorProfile": "",:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (        "AppArmorProfile": "",:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (        "ExecIDs": null,:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (        "ExecIDs": null,:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (        "HostConfig": {:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (        "HostConfig": {:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "Binds": null,:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "Binds": null,:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "ContainerIDFile": "",:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "ContainerIDFile": "",:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "LogConfig": {:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "LogConfig": {:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (                "Type": "json-file",:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (                "Type": "json-file",:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (                "Config": {}:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (                "Config": {}:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            },:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            },:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "NetworkMode": "default",:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "NetworkMode": "default",:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "PortBindings": {},:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "PortBindings": {},:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "RestartPolicy": {:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "RestartPolicy": {:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (                "Name": "no",:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (                "Name": "no",:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (                "MaximumRetryCount": 0:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (                "MaximumRetryCount": 0:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            },:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            },:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "AutoRemove": false,:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "AutoRemove": false,:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "VolumeDriver": "",:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "VolumeDriver": "",:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "VolumesFrom": null,:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "VolumesFrom": null,:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "CapAdd": null,:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "CapAdd": null,:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "CapDrop": null,:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "CapDrop": null,:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "CgroupnsMode": "host",:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "CgroupnsMode": "host",:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "Dns": [],:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "Dns": [],:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "DnsOptions": [],:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "DnsOptions": [],:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "DnsSearch": [],:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "DnsSearch": [],:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "ExtraHosts": null,:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "ExtraHosts": null,:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "GroupAdd": null,:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "GroupAdd": null,:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "IpcMode": "private",:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "IpcMode": "private",:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "Cgroup": "",:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "Cgroup": "",:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "Links": null,:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "Links": null,:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "OomScoreAdj": 0,:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "OomScoreAdj": 0,:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "PidMode": "",:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "PidMode": "",:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "Privileged": false,:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "Privileged": false,:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "PublishAllPorts": false,:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "PublishAllPorts": false,:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "ReadonlyRootfs": false,:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "ReadonlyRootfs": false,:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "SecurityOpt": null,:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "SecurityOpt": null,:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "UTSMode": "",:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "UTSMode": "",:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "UsernsMode": "",:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "UsernsMode": "",:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "ShmSize": 67108864,:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "ShmSize": 67108864,:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "Runtime": "runc",:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "Runtime": "runc",:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "ConsoleSize": [:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "ConsoleSize": [:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (                43,:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (                43,:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (                177:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (                177:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            ],:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            ],:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "Isolation": "",:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "Isolation": "",:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "CpuShares": 0,:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "CpuShares": 0,:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "Memory": 0,:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "Memory": 0,:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "NanoCpus": 0,:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "NanoCpus": 0,:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "CgroupParent": "",:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "CgroupParent": "",:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "BlkioWeight": 0,:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "BlkioWeight": 0,:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "BlkioWeightDevice": [],:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "BlkioWeightDevice": [],:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "BlkioDeviceReadBps": null,:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "BlkioDeviceReadBps": null,:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "BlkioDeviceWriteBps": null,:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "BlkioDeviceWriteBps": null,:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "BlkioDeviceReadIOps": null,:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "BlkioDeviceReadIOps": null,:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "Bl...iteIOps": null,:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "Bl...iteIOps": null,:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "CpuPeriod": 0,:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "CpuPeriod": 0,:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "CpuQuota": 0,:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "CpuQuota": 0,:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "CpuRealtimePeriod": 0,:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "CpuRealtimePeriod": 0,:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "CpuRealtimeRuntime": 0,:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "CpuRealtimeRuntime": 0,:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "CpusetCpus": "",:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "CpusetCpus": "",:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "CpusetMems": "",:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "CpusetMems": "",:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "Devices": [],:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "Devices": [],:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "DeviceCgroupRules": null,:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "DeviceCgroupRules": null,:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "DeviceRequests": null,:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do
+not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "DeviceRequests": null,:PSObject) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+Select-String : The input object cannot be bound to any parameters for the command either because the command does not 
+take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+At line:1 char:35
++ docker inspect tempvolumedinesh | Select-String Mounts -A 10
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (            "KernelMemory": 0,:PSObject) [Select-String], 
+ParameterBindingException
+    + FullyQualifiedErrorId : InputObjectNotBound,Microsoft.PowerShell.Commands.SelectStringCommand
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep\tempbuild> docker inspect tempvolumedinesh 
+[
+    {
+        "Id": "081f5b035f59fb61f7f3555ddfe64729397216f6a66434f11138dbd87f262b1b",
+        "Created": "2021-09-28T06:30:32.1844927Z",
+        "Path": "httpd-foreground",
+        "Args": [],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 3320,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2021-09-28T06:30:34.8410964Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:5ebe6e00baf9e77921c66f750839caf2adca3f22595504e4d93154fa5393631a",
+        "ResolvConfPath": "/var/lib/docker/containers/081f5b035f59fb61f7f3555ddfe64729397216f6a66434f11138dbd87f262b1b/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/081f5b035f59fb61f7f3555ddfe64729397216f6a66434f11138dbd87f262b1b/hostname",
+        "HostsPath": "/var/lib/docker/containers/081f5b035f59fb61f7f3555ddfe64729397216f6a66434f11138dbd87f262b1b/hosts",
+        "LogPath": "/var/lib/docker/containers/081f5b035f59fb61f7f3555ddfe64729397216f6a66434f11138dbd87f262b1b/081f5b035f59fb61f7f3555ddfe64729397216f6a66434f11138dbd87f262b1b-
+json.log",
+        "Name": "/tempvolumedinesh",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "default",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "host",
+            "Dns": [],
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "ConsoleSize": [
+                43,
+                177
+            ],
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "KernelMemory": 0,
+            "KernelMemoryTCP": 0,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": false,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "Mounts": [
+                {
+                    "Type": "tmpfs",
+                    "Target": "/tempdata"
+                }
+            ],
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/898a0fc8403403263d3558e04ea79e4fc6503dc5b09f273c5f38e1f3f2267a4a-init/diff:/var/lib/docker/overlay2/d0ebdb05d469b4af432cda9
+329f0ea45d910d9e1599fd6ec30c95a5be417e9f4/diff:/var/lib/docker/overlay2/745e472e9b89cd4b591e2a6cea0adcdfa11c22c6a601514f7def9ebfa8d4a3e6/diff:/var/lib/docker/overlay2/0bfa3a461d
+552d64797ad878bb9746acc71da1323fe5d8c32dfca66b78377518/diff:/var/lib/docker/overlay2/dd0068763399a2d117c0759d5d8937c3f04abaa69dcecd9cc3fa89d2ddcdc886/diff:/var/lib/docker/overla
+y2/1769d7b6beba87b7ebabf3054c22224c35af9ff08236c6e6691239ff5a821784/diff",
+                "MergedDir": "/var/lib/docker/overlay2/898a0fc8403403263d3558e04ea79e4fc6503dc5b09f273c5f38e1f3f2267a4a/merged",
+                "UpperDir": "/var/lib/docker/overlay2/898a0fc8403403263d3558e04ea79e4fc6503dc5b09f273c5f38e1f3f2267a4a/diff",
+                "WorkDir": "/var/lib/docker/overlay2/898a0fc8403403263d3558e04ea79e4fc6503dc5b09f273c5f38e1f3f2267a4a/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "tmpfs",
+                "Source": "",
+                "Destination": "/tempdata",
+                "Mode": "",
+                "RW": true,
+                "Propagation": ""
+            }
+        ],
+        "Config": {
+            "Hostname": "081f5b035f59",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "80/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/apache2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "HTTPD_PREFIX=/usr/local/apache2",
+                "HTTPD_VERSION=2.4.49",
+                "HTTPD_SHA256=65b965d6890ea90d9706595e4b7b9365b5060bec8ea723449480b4769974133b",
+                "HTTPD_PATCHES="
+            ],
+            "Cmd": [
+                "httpd-foreground"
+            ],
+            "Image": "httpd",
+            "Volumes": null,
+            "WorkingDir": "/usr/local/apache2",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": {},
+            "StopSignal": "SIGWINCH"
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "064dc3371ecd10b8346e38d49f242416a74c7bad242bc73d269fb827cbfbef86",
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "Ports": {
+                "80/tcp": null
+            },
+            "SandboxKey": "/var/run/docker/netns/064dc3371ecd",
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "90ceda839f58dde9a6bc9e7d01027c5147c5dfe050246b66b20bbbb705ee6969",
+            "Gateway": "172.17.0.1",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "172.17.0.8",
+            "IPPrefixLen": 16,
+            "IPv6Gateway": "",
+            "MacAddress": "02:42:ac:11:00:08",
+            "Networks": {
+                "bridge": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "NetworkID": "4218aa798eac0895d62c3ec4226f0294d9d80bf027320ae0d67c5efbd87ddf34",
+                    "EndpointID": "90ceda839f58dde9a6bc9e7d01027c5147c5dfe050246b66b20bbbb705ee6969",
+                    "Gateway": "172.17.0.1",
+                    "IPAddress": "172.17.0.8",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "MacAddress": "02:42:ac:11:00:08",
+                    "DriverOpts": null
+                }
+            }
+        }
+    }
+]
+PS C:\Users\dinesh.sivasanka\Desktop\tmlep\tempbuild> Stop-Transcript
+**********************
+Windows PowerShell transcript end
+End time: 20210928120411
+**********************
